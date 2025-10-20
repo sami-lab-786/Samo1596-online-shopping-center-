@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Shop the latest trends at Samo1596 – your stylish online store for fashion, decor, fitness, and more. Fast delivery, best prices, and premium quality guaranteed!">
+
+  <title>Samo1596 Online Store | Stylish shopping starts here</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/891/891419.png" type="image/png">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="logo"><img src="shopping-icon.webp" alt="logo"> Samo1596</div>
+
+    <div class="search-wrap">
+      <input id="mainSearch" type="search" placeholder="Search products, brands..." aria-label="Search products">
+      <button onclick="searchFromNavbar()">🔍</button>
+    </div>
+
+    <div class="nav-icons">
+      <button class="toggle-dark" id="darkToggle" onclick="toggleDark()">🌙</button>
+      <button class="icon" title="Cart" onclick="toggleMiniCart()">🛒 <span id="cartCount" style="font-weight:700;margin-left:6px">0</span></button>
+      <a href="help.html"  class="icon" title="Help">💬</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero container">
+    <h1 style="margin:0;font-size:22px;color:#ff9900;">Samo1596 Online Store</h1>
+    <div style="color: whitesmoke;;" id="welcome-text"></div>
+  </header>
+
+  <!-- FILTERS -->
+  <div class="container">
+    <div class="filters" id="filtersBar">
+      <button onclick="filterProducts('all')" class="active">All</button>
+      <button onclick="filterProducts('electronics')">Electronics</button>
+      <button onclick="filterProducts('clothes')">Clothes</button>
+      <button onclick="filterProducts('islam')">Islamic</button>
+      <button onclick="filterProducts('bags')">Bags</button>
+      <button onclick="filterProducts('home')">Home</button>
+      <button onclick="filterProducts('kitchen')">Kitchen</button>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <main class="container">
+    <div class="products" id="product-list">
+
+      <!-- Example product entries - note data-images (comma separated) -->
+      <article class="product" data-category="electronics" data-sku="watch-001" data-images="watch .jpg,watch2.jpg,watch3.jpg">
+        <div class="img-wrap">
+          <img src="watch3.jpg
+          " alt="Smart Watch Series 9" onclick="openQuickView(this)">
+          <div class="badge">Hot</div>
+        </div>
+        <div class="body">
+          <h3>Smart Watch Series 9</h3>
+          <div class="muted">Bluetooth, Fitness tracking</div>
+          <div class="price">Rs. 4,579</div>
+          <div class="toggle-desc" onclick="toggleDescription(this)"><span>Show Details</span> 🔽</div>
+          <div class="product-description"><p>• Material: Metal & Silicone<br>• Battery: 260 mAh • Standby: 4 days</p></div>
+          <div class="actions">
+            <button class="btn btn-order" onclick="showAddressForm(this)">Order Now</button>
+            <button class="btn btn-cart" onclick="addToCart(this)">➕ Add to Cart</button>
+          </div>
+
+          <div class="address-form">
+            <input type="text" placeholder="Your Name" class="name-input">
+            <input type="number" placeholder="Phone Number" class="phone-input">
+            <input type="number" placeholder="Alt Phone (optional)" class="second-phone-input">
+            <input type="text" placeholder="Full Address" class="address-input">
+            <input type="text" placeholder="Landmark / Area" class="landmark-input">
+            <input type="number" placeholder="Quantity" class="quantity-input" value="1" min="1">
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-order" onclick="sendOrder(this, 'Smart Watch Series 9', 4579)">Confirm </button>
+              <button class="btn btn-cart" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
+            </div>
+            <div class="confirmation-message"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="clothes" data-sku="tshirt-001" data-images="tshirt.jpg,tshirt2.jpg">
+        <div class="img-wrap">
+          <img src="tshirt.jpg" alt="Mens Stylish T-Shirt" onclick="openQuickView(this)">
+        </div>
+        <div class="body">
+          <h3>Mens Stylish T-Shirt</h3>
+          <div class="muted">Cotton, Comfortable fit</div>
+          <div class="price">Rs. 999</div>
+          <div class="toggle-desc" onclick="toggleDescription(this)"><span>Show Details</span> 🔽</div>
+          <div class="product-description"><p>• Sizes: S, M, L, XL • Color: Black, White, Grey</p></div>
+          <div class="actions">
+            <button class="btn btn-order" onclick="showAddressForm(this)">Order Now</button>
+            <button class="btn btn-cart" onclick="addToCart(this)">➕ Add to Cart</button>
+          </div>
+          <div class="address-form">
+            <input type="text" placeholder="Your Name" class="name-input">
+            <input type="number" placeholder="Phone Number" class="phone-input">
+            <input type="number" placeholder="Alt Phone (optional)" class="second-phone-input">
+            <input type="text" placeholder="Full Address" class="address-input">
+            <input type="text" placeholder="Landmark / Area" class="landmark-input">
+            <input type="number" placeholder="Quantity" class="quantity-input" value="1" min="1">
+            <input type="text" placeholder="Enter Size (e.g. M)" class="size-input">
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-order confirm-btn"
+        data-name="Men's Stylish T-Shirt"
+        data-price="999">
+  Confirm 
+</button>
+<button class="btn btn-cart" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
+
+            </div>
+            <div class="confirmation-message"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-category="islam" data-sku="tasbeeh-001" data-images="tasbeeh.jpg">
+        <div class="img-wrap">
+          <img src="tasbeeh.jpg" alt="Digital Tasbeeh Counter" onclick="openQuickView(this)">
+        </div>
+        <div class="body">
+          <h3>Digital Tasbeeh Counter</h3>
+          <div class="muted">Easy counting, portable</div>
+          <div class="price">Rs. 1,299</div>
+          <div class="toggle-desc" onclick="toggleDescription(this)"><span>Show Details</span> 🔽</div>
+          <div class="product-description"><p>• Lightweight • LCD display • Precise counting</p></div>
+          <div class="actions">
+            <button class="btn btn-order" onclick="showAddressForm(this)">Order Now</button>
+            <button class="btn btn-cart" onclick="addToCart(this)">➕ Add to Cart</button>
+          </div>
+          <div class="address-form">
+            <input type="text" placeholder="Your Name" class="name-input">
+            <input type="number" placeholder="Phone Number" class="phone-input">
+            <input type="number" placeholder="Alt Phone (optional)" class="second-phone-input">
+            <input type="text" placeholder="Full Address" class="address-input">
+            <input type="text" placeholder="Landmark / Area" class="landmark-input">
+            <input type="number" placeholder="Quantity" class="quantity-input" value="1" min="1">
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-order" onclick="sendOrder(this, 'Digital Tasbeeh Counter', 1299)">Confirm</button>
+              <button class="btn btn-cart" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
+            </div>
+            <div class="confirmation-message"></div>
+          </div>
+        </div>
+      </article>
+
+      
+
+      <article class="product" data-category="bags" data-sku="bag-001" data-images="bag.jpg,bag2.jpg">
+        <div class="img-wrap">
+          <img src="bag.jpg" alt="Luxury Ladies Handbag" onclick="openQuickView(this)">
+        </div>
+        <div class="body">
+          <h3>Luxury Ladies Handbag</h3>
+          <div class="muted">Stylish & Durable</div>
+          <div class="price">Rs. 2,499</div>
+          <div class="toggle-desc" onclick="toggleDescription(this)"><span>Show Details</span> 🔽</div>
+          <div class="product-description"><p>• Material: Faux leather • Spacious • Multiple pockets</p></div>
+          <div class="actions">
+            <button class="btn btn-order" onclick="showAddressForm(this)">Order Now</button>
+            <button class="btn btn-cart" onclick="addToCart(this)">➕ Add to Cart</button>
+          </div>
+          <div class="address-form">
+            <input type="text" placeholder="Your Name" class="name-input">
+            <input type="number" placeholder="Phone Number" class="phone-input">
+            <input type="number" placeholder="Alt Phone (optional)" class="second-phone-input">
+            <input type="text" placeholder="Full Address" class="address-input">
+            <input type="text" placeholder="Landmark / Area" class="landmark-input">
+            <input type="number" placeholder="Quantity" class="quantity-input" value="1" min="1">
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-order" onclick="sendOrder(this, 'Luxury Ladies Handbag', 2499)">Confirm </button>
+              <button class="btn btn-cart" onclick="this.parentElement.parentElement.style.display='none'">Cancel</button>
+            </div>
+            <div class="confirmation-message"></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div id="no-results">❌ Product not found. Try another search or <a href="https://wa.me/923291504030" target="_blank">WhatsApp us</a>.</div>
+
+    <!-- DELIVERY NOTE -->
+    <div style="margin:20px 0;padding:14px;background:var(--card);border-radius:8px;display:flex;align-items:center;gap:12px;justify-content:space-between">
+      <div>
+        <strong>🚚 Fast Delivery</strong>
+        <div class="muted">We deliver across Pakistan & UAE. Estimated: <strong>3 to 6 working days</strong>. Cash on Delivery available.</div>
+      </div>
+      <div style="font-size:14px;color:#0b5560;font-weight:700">Contact: <a href="https://wa.me/923291504030" target="_blank">+92 329 1504030</a></div>
+    </div>
+  </main>
+
+  <!-- MINI-CART (drawer) -->
+  <div id="miniCart" aria-hidden="true">
+    <h4>Your Cart</h4>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div style="display:flex;justify-content:space-between"><strong>Total</strong><strong id="cartTotal">Rs. 0</strong></div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-order" onclick="checkoutCart()">Checkout  </button>
+        <button class="btn btn-cart" onclick="clearCart()">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal (carousel) -->
+  <div id="quickViewModal" onclick="closeQuickView(event)">
+    <div class="close-modal" onclick="closeQuickView(event)">✕</div>
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="carousel">
+        <img id="carouselMain" src="" alt="">
+        <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+          <button onclick="prevCarousel()" class="btn btn-cart">❮</button>
+          <div class="thumbs" id="carouselThumbs"></div>
+          <button onclick="nextCarousel()" class="btn btn-cart">❯</button>
+        </div>
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <div class="muted" id="modalDesc"></div>
+        <div class="price" id="modalPrice"></div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn btn-order" id="modalOrderBtn">Order </button>
+          <button class="btn btn-cart" id="modalAddCartBtn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE MODAL (full) fallback -->
+  <div id="imgModal" onclick="closeModal()" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px">
+    <span class="close" onclick="closeModal()">✕</span>
+    <img id="modalImage" src="" alt="" style="max-width:95%;max-height:85%;border-radius:8px">
+    <div id="caption" style="color:#fff;margin-top:8px;text-align:center"></div>
+  </div>
+
+
+
+  
+<!-- 🌟 FEEDBACK SECTION -->
+
+<section id="feedback" style="max-width:800px;margin:40px auto;padding:25px;background:var(--card,#fff);border-radius:12px;box-shadow:0 0 10px rgba(0,0,0,0.1)">
+  <h2 style="text-align:center;color:#ff9900;margin-bottom:15px;">💬 Share Your Feedback</h2>
+  <p style="text-align:center;color:#555;">We’d love to hear from you! Tell us what you think about our store or products.</p>
+  
+  <form id="feedbackForm" style="display:flex;flex-direction:column;gap:10px;margin-top:20px;">
+    <input type="text" id="fbName" placeholder="Your Name" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
+    <input type="email" id="fbEmail" placeholder="Your Email" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
+    <textarea id="fbMessage" placeholder="Your Feedback..." required rows="3" style="padding:10px;border-radius:6px;border:1px solid #ccc;"></textarea>
+
+    <div style="display:flex;gap:5px;align-items:center;">
+      <label style="font-weight:bold;color:#444;">Rating:</label>
+      <div id="starRating" style="cursor:pointer;font-size:22px;color:#ccc;">
+        <span data-value="1">⭐</span>
+        <span data-value="2">⭐</span>
+        <span data-value="3">⭐</span>
+        <span data-value="4">⭐</span>
+        <span data-value="5">⭐</span>
+      </div>
+    </div>
+
+    <button type="button" onclick="sendFeedback()" style="background:#25D366;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:16px;">
+      Submit Feedback
+    </button>
+  </form>
+
+  <div id="feedbackMsg" style="display:none;margin-top:15px;text-align:center;color:green;font-weight:600;">
+    ✅ Thank you! Your feedback has been received.
+  </div>
+
+  <div style="margin-top:10px;font-weight:600;color:#ff9900;">
+    Total Feedback Received: <span id="feedbackCount">0</span>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
+
+  <!-- FOOTER -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 14px">
+    <footer>
+      &copy; 2025 Samo1596 Online Store. All rights reserved. <br>
+      Follow us:
+      <a href="https://www.instagram.com/ch_sami1596/" target="_blank">Instagram</a> |
+      <a href="https://wa.me/923291504030" target="_blank">WhatsApp</a>|
+      <button onclick="openPrivacy()" 
+            style="background:none; border:none; color:#ff9900; cursor:pointer; font-weight:bold;">
+      Privacy Policy
+    </button>
+  </footer>
+</div>
+
+<!-- 🔒 Privacy Policy Modal -->
+<div id="privacyModal" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center;">
+  <div style="background:#fff; max-width:600px; width:90%; padding:25px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.2); text-align:left; font-size:16px; line-height:1.6; color:#333;">
+    <h2 style="text-align:center; color:#232f3e;">Privacy Policy</h2>
+    <p>We value your privacy. Any personal information you provide while ordering — including your name, phone number, address, and order details — will only be used to process your order and deliver your product.</p>
+    <p>We never share your information with third parties or use it for marketing without your permission.</p>
+    <p>If you have any questions about how we use your data, feel free to contact us through our 
+      <a href="https://wa.me/923291504030?text=Hi,+I+want+to+ask+about+your+Privacy+Policy" 
+         target="_blank" 
+         style="color:#25D366; font-weight:bold; text-decoration:none;">
+        WhatsApp support 💬
+      </a>.
+    </p>
+    <div style="text-align:center; margin-top:20px;">
+      <button onclick="closePrivacy()" 
+              style="background:#ff9900; color:white; border:none; padding:10px 25px; border-radius:8px; cursor:pointer;">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 🔧 JavaScript -->
+ 
+      
+    </footer>
+  </div>
+  <!-- 🔙 Back Button -->
+  <button class="back-btn" onclick="window.history.back();" title="Go back">←</button>
+ <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffa41c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+  " title="Go to top">↑</button>
+
+  <!-- -------------------------- SCRIPT (JS) -------------------------- -->
+   <script src="script.js"></script>
+   
+</body>
+</html>
