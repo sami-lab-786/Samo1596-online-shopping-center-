@@ -1,0 +1,257 @@
+ :root {
+      --bg-color: rgb(239, 232, 232);
+      --text-color: #333;
+      --card-bg: #fff;
+      --header-bg: #232f3e;
+      --header-text: #ff9900;
+      --faq-bg: #232f3e;
+      --faq-text: aliceblue;
+      --button-bg: #ff9900;
+      --button-hover: #e68a00;
+      --link-color: #25D366;
+      --footer-bg: #fff;
+    }
+
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #e0e0e0;
+      --card-bg: #2b2b2b;
+      --header-bg: #111;
+      --header-text: #ffb347;
+      --faq-bg: #111;
+      --faq-text: #ddd;
+      --button-bg: #ffb347;
+      --button-hover: #ff9900;
+      --link-color: #25D366;
+      --footer-bg: #111;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    /* Header */
+    .sami {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 20px;
+      position: relative;
+    }
+    .sami h2 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.3;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: var(--button-bg);
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .theme-toggle:hover {
+      background: var(--button-hover);
+    }
+
+    /* Main Box */
+    .container {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 80%;
+      box-sizing: border-box;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--button-bg);
+      color: #fff;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    .whatsapp-btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    /* FAQ Section */
+    section {
+      background: var(--faq-bg);
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .faq {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+    .faq p {
+      color: var(--faq-text);
+    }
+    .faq h4 {
+      margin-bottom: 5px;
+      color: #ff9900;
+      font-size: 22px;
+    }
+
+    /* Floating Buttons */
+    .top-btn, .back-btn {
+      position: fixed;
+      bottom: 20px;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 999;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    .top-btn {
+      right: 20px;
+      background-color: #25D366;
+    }
+    .top-btn:hover {
+      background-color: #1ebe5d;
+    }
+    .back-btn {
+      left: 20px;
+      background-color: #007bff;
+    }
+    .back-btn:hover {
+      background-color: #0066d4;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--footer-bg);
+      text-align:center;
+      padding:20px 0;
+      font-size:15px;
+      color: var(--text-color);
+      transition: background 0.4s ease;
+    }
+    footer a {
+      text-decoration: none;
+    }
+
+    /* ✅ Responsive Enhancements */
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 600px;
+        padding: 35px;
+      }
+      h2 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 17px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sami h2 {
+        font-size: 24px;
+      }
+      .theme-toggle {
+        font-size: 16px;
+        padding: 6px 10px;
+      }
+      .container {
+        padding: 25px;
+        width: 92%;
+      }
+      input[type="text"] {
+        width: 90%;
+      }
+      .faq h4 {
+        font-size: 18px;
+      }
+      .faq p {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 15px;
+      }
+      .whatsapp-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sami h2 {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      .container {
+        padding: 20px;
+        width: 95%;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .faq h4 {
+        font-size: 16px;
+      }
+      .faq p {
+        font-size: 13px;
+      }
+      .whatsapp-btn {
+        font-size: 14px;
+        padding: 10px 22px;
+      }
+      .top-btn, .back-btn {
+        font-size: 18px;
+        padding: 10px;
+      }
+      footer {
+        font-size: 13px;
+      }
+    }
