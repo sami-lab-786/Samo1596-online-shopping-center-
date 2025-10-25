@@ -232,13 +232,26 @@
     gap: 12px;
     padding: 10px;
   }
+  .product-card p {
+    font-size: 12px;
+  }
+  .product-card h3 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
   .products {
     grid-template-columns: repeat(2, 1fr); /* still 2 per row for small phones */
   }
+  .product-card h3 {
+    font-size: 12px;
+  }
+  .product-card p {
+    font-size: 10px;
+  }
 }
+
 
 /* 💎 Product Card Style */
 .product-card {
@@ -289,5 +302,6 @@
 
 
     
+
 
 
