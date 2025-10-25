@@ -104,8 +104,8 @@
     .price{color:var(--danger);font-weight:800;font-size:17px}
     .actions{margin-top:auto;display:flex;gap:8px;align-items:center}
     .btn{border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:700}
-    .btn-order{background:var(--btn);color:#111;flex:1}
-    .btn-cart{background:#e6eef3;color:#111;border:1px solid #d9e7f3}
+    .btn-order{background:#25D366 ;color:#111;flex:1}
+    .btn-cart{background:#ffa41c;color:#111;border:1px solid #d9e7f3}
 
     /* ADDRESS FORM */
     .address-form{display:none;padding:12px;background:rgba(0,0,0,0.03);border-top:1px solid rgba(0,0,0,0.04);border-radius:0 0 10px 10px}
@@ -151,6 +151,13 @@
     @media (max-width:900px){.modal-info{display:none}.carousel img{max-height:320px}}
     @media (max-width:600px){.products{grid-template-columns:repeat(2,1fr)}.search-wrap{order:3;width:100%}}
     @media (max-width:420px){.products{grid-template-columns:1fr}}
+
+
+
+
+
+
+
 
 
     /* 🔸 Scrollable Filter Bar Style */
@@ -213,4 +220,9 @@
 
 
 
+
+
+
+
     
+
