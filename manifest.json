@@ -1,7 +1,8 @@
 {
-  "name": "Samo1596 Online Store",
+   "name": "Samo1596 Online Store",
   "short_name": "Samo1596",
-  "start_url": "_",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#232f3e",
   "theme_color": "#232f3e",
@@ -18,4 +19,5 @@
     }
   ]
 }
+
 
