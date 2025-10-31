@@ -51,7 +51,7 @@
 
     const productEl = button.closest('.product');
     const productImageEl = productEl.querySelector('img');
-const productImage = productImageEl ? (location.origin + location.pathname.replace('index.html','') + productImageEl.getAttribute('src')) : '';
+const productImage = productImageEl ? (location.origin + location.pathname.replace('index.html','') + productImageEl.getAttribute('https://sami-lab-786.github.io/Samo1596-online-shopping-center-/')) : '';
 
     if (!name || !phone || !quantity || !address) {
       alert("Please fill in Name, Phone, Address, and Quantity before placing the order.");
@@ -359,3 +359,4 @@ const productImage = productImageEl ? (location.origin + location.pathname.repla
   }
 
  
+
