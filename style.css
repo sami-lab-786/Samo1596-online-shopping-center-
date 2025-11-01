@@ -137,7 +137,8 @@
     .close-modal{position:absolute;right:26px;top:18px;color:#fff;font-size:26px;cursor:pointer}
 
     /* MINI-CART (drawer) */
-  .mini-cart {
+    /* -------------------- MINI CART DESIGN -------------------- */
+.mini-cart {
   position: fixed;
   top: 0;
   right: -380px;
@@ -212,6 +213,7 @@
 #miniCart .cart-item .btn-cart:hover {
   background: #e68a00;
 }
+
 
     /* responsive */
     @media (max-width:900px){.modal-info{display:none}.carousel img{max-height:320px}}
@@ -363,8 +365,6 @@
 
 
     
-
-
 
 
 
