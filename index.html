@@ -207,18 +207,23 @@
     </div>
   </main>
 
-  <!-- MINI-CART (drawer) -->
-  <div id="miniCart" aria-hidden="true">
-    <h4>Your Cart</h4>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div style="display:flex;justify-content:space-between"><strong>Total</strong><strong id="cartTotal">Rs. 0</strong></div>
-      <div style="display:flex;gap:8px">
-        <button class="btn btn-order" onclick="checkoutCart()">Checkout  </button>
-        <button class="btn btn-cart" onclick="clearCart()">Clear Cart</button>
-      </div>
+<!-- 🛒 MINI CART -->
+<div id="cartOverlay" class="cart-overlay"></div>
+
+<div id="miniCart" class="mini-cart">
+  <span id="closeCart" class="close-cart">&times;</span>
+  <h4>Your Cart</h4>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+      <strong>Total</strong><strong id="cartTotal">Rs. 0</strong>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-order" onclick="checkoutCart()">Checkout</button>
+      <button class="btn btn-cart" onclick="clearCart()">Clear</button>
     </div>
   </div>
+</div>
 
   <!-- Quick View Modal (carousel) -->
   <div id="quickViewModal" onclick="closeQuickView(event)">
@@ -393,6 +398,7 @@
 
 </body>
 </html>
+
 
 
 
