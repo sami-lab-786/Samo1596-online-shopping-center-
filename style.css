@@ -304,9 +304,7 @@
 }
 
 @media (max-width: 480px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr); /* still 2 per row for small phones */
-  }
+   
   .product-card h3 {
     font-size: 12px;
   }
