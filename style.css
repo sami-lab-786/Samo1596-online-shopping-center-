@@ -137,15 +137,81 @@
     .close-modal{position:absolute;right:26px;top:18px;color:#fff;font-size:26px;cursor:pointer}
 
     /* MINI-CART (drawer) */
-    #miniCart{position:fixed;right:0;top:0;height:100%;width:360px;max-width:95%;transform:translateX(110%);background:var(--card);box-shadow:-10px 0 30px rgba(0,0,0,0.2);z-index:2500;padding:14px;transition:transform .25s ease}
-    #miniCart.open{transform:translateX(0)}
-    #miniCart h4{margin:0 0 8px 0}
-    .cart-items{max-height:60vh;overflow:auto;display:flex;flex-direction:column;gap:10px;padding-right:6px}
-    .cart-item{display:flex;gap:8px;align-items:center;border-radius:8px;padding:8px;background:rgba(0,0,0,0.02)}
-    .cart-item img{width:64px;height:64px;object-fit:cover;border-radius:6px}
-    .cart-item .meta{flex:1}
-    .cart-item .meta b{display:block}
-    .cart-footer{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+  .mini-cart {
+  position: fixed;
+  top: 0;
+  right: -380px;
+  width: 340px;
+  height: 100%;
+  background: var(--card, #fff);
+  box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+  z-index: 10000;
+  padding: 16px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  border-radius: 12px 0 0 12px;
+}
+.mini-cart.open {
+  right: 0;
+}
+
+.cart-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+.cart-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-cart {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 26px;
+  color: #222;
+  cursor: pointer;
+}
+/* 🛒 Mini Cart Image Fix */
+#miniCart .cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+/* Cart item layout improve */
+#miniCart .cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+#miniCart .cart-item .meta {
+  flex: 1;
+}
+
+#miniCart .cart-item .btn-cart {
+  background: #ff9900;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#miniCart .cart-item .btn-cart:hover {
+  background: #e68a00;
+}
 
     /* responsive */
     @media (max-width:900px){.modal-info{display:none}.carousel img{max-height:320px}}
@@ -297,6 +363,7 @@
 
 
     
+
 
 
 
