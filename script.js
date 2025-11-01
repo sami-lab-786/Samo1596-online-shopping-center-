@@ -165,6 +165,11 @@ const productImage = productImageEl
   /* -------------------- Mini Cart -------------------- */
   function saveCart(){ localStorage.setItem('samo_cart', JSON.stringify(cart)); renderCart(); }
   function loadCart(){ cart = JSON.parse(localStorage.getItem('samo_cart') || '[]'); renderCart(); }
+// -------------------- MINI CART TOGGLE --------------------
+const overlay = document.getElementById('cartOverlay');
+const cartPanel = document.getElementById('miniCart');
+const closeBtn = document.getElementById('closeCart');
+
 function toggleMiniCart() {
   cartPanel.classList.toggle('open');
   overlay.classList.toggle('show');
@@ -181,6 +186,7 @@ overlay.addEventListener('click', () => {
   cartPanel.classList.remove('open');
   overlay.classList.remove('show');
 });
+
   function addToCart(btn){
     const productEl = btn.closest('.product');
     const sku = productEl.getAttribute('data-sku') || productEl.querySelector('h3').innerText;
@@ -376,6 +382,4 @@ overlay.addEventListener('click', () => {
   }
 
  
-
-
 
